@@ -49,6 +49,37 @@ def authenticate_kaggle():
 
     return kaggle_api
 
+def download_dataset(kaggle_api):
+    """
+    Download a datasets in current directory and unzip it
+    :param kaggle_api:
+    :return:
+    """
+    for key, val in DATASET_DICT.items():
+        kaggle_api.dataset_download_files(val['dataset_path'], path='./', unzip=True)
+
+    return
+
+def get_and_preprocess_breast_cancer_wisconsin_dataframe():
+   
+    # create crude oil dataframe from csv
+    breast_cancer_wisconsin_dataset_df = pd.read_csv(DATASET_DICT["Breast_Cancer_Wisconsin_DataSet"]["file_name"])
+
+    # preprocess the crude-oil dataset
+    breast_cancer_wisconsin_dataset_df['date'] = pd.to_datetime(breast_cancer_wisconsin_dataset_df['date']).dt.date
+
+    return breast_cancer_wisconsin_dataset_df
+
+def get_and_preprocess_cancer_dataset_from_major_indian_cities_dataframe():
+
+    # create crude oil dataframe from csv
+    cancer_dataset_from_major_indian_cities_df = pd.read_csv(DATASET_DICT["Cancer_Dataset_From_Major_Indian_Cities"]["file_name"])
+
+    # preprocess the crude-oil dataset
+    cancer_dataset_from_major_indian_cities_df['Date'] = pd.to_datetime(cancer_dataset_from_major_indian_cities_df['Date'], format='%d-%m-%Y')
+
+    return cancer_dataset_from_major_indian_cities_df
+
 
 if __name__ == "__main__":
     main()
