@@ -20,7 +20,6 @@ DATASET_DICT = {
     "Thiruvanathapuram_2012_2016 - Sheet1.csv"
 ]
 
-
 "Cancer_Dataset_From_Major_Indian_Cities": = "data.csv"
 }
 
