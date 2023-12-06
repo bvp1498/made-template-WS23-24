@@ -42,5 +42,13 @@ def main():
     dataset1_clean.to_csv('/data/combined_indian_cities_cancer_dataset.csv', index=False)
     dataset2_clean.to_csv('/data/breast_cancer_prediction_dataset.csv', index=False)
 
+
+def authenticate_kaggle():
+    kaggle_api = KaggleApi()
+    kaggle_api.authenticate()
+
+    return kaggle_api
+
+
 if __name__ == "__main__":
     main()
