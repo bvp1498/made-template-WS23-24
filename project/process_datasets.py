@@ -7,41 +7,22 @@ from glob import glob
 dataset1_path = 'dataset1/'  # Path for the Indian Cities Cancer Dataset
 dataset2_path = 'dataset2/data.csv'  # Path for the Breast Cancer Prediction Dataset
 
-# Function to read and combine Indian Cities Cancer Dataset
-def read_and_combine_dataset1(path):
-    all_files = glob(os.path.join(path, "*.csv"))
-    df_list = []
-    for filename in all_files:
-        df = pd.read_csv(filename, index_col=None, header=0)
-        df['City'] = os.path.basename(filename).split('_')[0]  # Extract city name from filename
-        df_list.append(df)
-    combined_df = pd.concat(df_list, axis=0, ignore_index=True)
-    return combined_df
 
-# Function to read Breast Cancer Prediction Dataset
-def read_dataset2(path):
-    return pd.read_csv(path)
+DATASET_DICT = {
+ "Breast_Cancer_Wisconsin_DataSet":= [
+    "Chennai_2012_2016 - Sheet1.csv",
+    "Delhi_2012_2014 - Sheet1.csv",
+    "Hyderabad_District_2014_2016 - Sheet1.csv",
+    "Kolkata_2012_2015 - Sheet1.csv",
+    "Kollam_2012_2016 - Sheet1.csv",
+    "Mumbai_2012_2015 - Sheet1.csv",
+    "Patiala_District_2012_2016 - Sheet1.csv",
+    "Thiruvanathapuram_2012_2016 - Sheet1.csv"
+]
 
-# Function to clean and transform datasets
-def clean_transform_datasets(df1, df2):
-    # Basic cleaning and transformation can be added here
-    # For example, handling missing values, renaming columns, etc.
-    
-    return df1, df2
 
-# Main execution
-def main():
-    # Read and combine the datasets
-    dataset1 = read_and_combine_dataset1(dataset1_path)
-    dataset2 = read_dataset2(dataset2_path)
-
-    # Clean and transform the datasets
-    dataset1_clean, dataset2_clean = clean_transform_datasets(dataset1, dataset2)
-
-    # Save the cleaned datasets
-    dataset1_clean.to_csv('/data/combined_indian_cities_cancer_dataset.csv', index=False)
-    dataset2_clean.to_csv('/data/breast_cancer_prediction_dataset.csv', index=False)
-
+"Cancer_Dataset_From_Major_Indian_Cities": = "data.csv"
+}
 
 def authenticate_kaggle():
     kaggle_api = KaggleApi()
