@@ -80,6 +80,34 @@ def get_and_preprocess_cancer_dataset_from_major_indian_cities_dataframe():
 
     return cancer_dataset_from_major_indian_cities_df
 
+def dump_dataset_to_db(dataframe, db_name, datatype):
+
+    db_engine = create_engine(f"sqlite:///data/{db_name}.sqlite")
+    dataframe.to_sql(db_name, db_engine, index=False, if_exists='replace', dtype=datatype)
+    return
+
+
+def main():
+   
+    kaggle_api = authenticate_kaggle()
+
+    # download dataset in local storage
+    download_dataset(kaggle_api)
+
+    
+    breast_cancer_wisconsin_dataset_df = get_and_preprocess_breast_cancer_wisconsin_dataframe()
+
+    
+    cancer_dataset_from_major_indian_cities_df = get_and_preprocess_cancer_dataset_from_major_indian_cities_dataframe()
+
+    # insert crude oil data into sqlite database
+    dump_dataset_to_db(dataframe=breast_cancer_wisconsin_dataset_df, db_name=DATASET_DICT['Breast_Cancer_Wisconsin_DataSet']['database_name'],
+                       datatype=DATASET_DICT['Breast_Cancer_Wisconsin_DataSet']['sqlalchemy_datatype'])
+
+    # insert gold price data into sqlite database
+    dump_dataset_to_db(dataframe=cancer_dataset_from_major_indian_cities_df, db_name=DATASET_DICT['Cancer_Dataset_From_Major_Indian_Cities']['database_name'],
+                       datatype=DATASET_DICT['Cancer_Dataset_From_Major_Indian_Cities']['sqlalchemy_datatype'])
+
 
 if __name__ == "__main__":
     main()
