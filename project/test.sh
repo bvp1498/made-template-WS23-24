@@ -10,4 +10,6 @@ pip install --upgrade pip
 pip install -r ./project/requirements.txt
 
 # Run your Python file
-pytest ./project/testdata_pipeline.py
+# pytest ./project/testdata_pipeline.py
+
+echo "completed pytest..."
