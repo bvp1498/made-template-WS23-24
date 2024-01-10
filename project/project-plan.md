@@ -7,7 +7,7 @@ Comparative Analysis of Cancer Characteristics
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. How does the gender-based prevalence of cancer vary across different cities in India and Brazil?
+1. How does the gender-based prevalence of cancer vary across different countries like India and Brazil?
 
 ## Description
 
