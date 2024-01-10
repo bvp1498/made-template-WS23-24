@@ -12,7 +12,7 @@ Comparative Analysis of Cancer Characteristics
 ## Description
 
 <!-- Describe your data science project in max. 200 words. Consider writing about why and how you attempt it. -->
- This question would involve comparing the detailed breast cancer data from the first dataset with the incidence data from different cities in the second dataset.
+ This question would involve comparing the cancer data from the first dataset with the incidence data from different cities in the second dataset.
 
 ## Datasources
 
