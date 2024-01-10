@@ -7,7 +7,7 @@ Comparative Analysis of Cancer Characteristics
 ## Main Question
 
 <!-- Think about one main question you want to answer based on the data. -->
-1. How do the characteristics and patterns of breast cancer (as measured by attributes like radius, texture, perimeter, area, etc.) differ between various cities in India?
+1. How does the gender-based prevalence of cancer vary across different cities in India and Brazil?
 
 ## Description
 
@@ -18,9 +18,9 @@ Comparative Analysis of Cancer Characteristics
 
 <!-- Describe each datasources you plan to use in a section. Use the prefic "DatasourceX" where X is the id of the datasource. -->
 
-### Datasource1: Breast Cancer Wisconsin (Diagnostic) Data Set
-* Metadata URL: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data
-* Data URL: https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data/download?datasetVersionNumber=2
+### Datasource1: Cancer Data Brazil
+* Metadata URL: https://www.kaggle.com/datasets/joaopedromedeiros/cancer-data-brazil
+* Data URL: https://www.kaggle.com/datasets/joaopedromedeiros/cancer-data-brazil/download?datasetVersionNumber=2
 * Data Type: CSV
 
 ### Datasource2: Cancer Dataset From Major Indian Cities
